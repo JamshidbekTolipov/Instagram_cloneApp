@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "846086203891",
+    "firebase_url": "https://firedemo-ca155-default-rtdb.firebaseio.com",
+    "project_id": "firedemo-ca155",
+    "storage_bucket": "firedemo-ca155.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846086203891:android:7acc03320275dc4c1b8a86",
+        "android_client_info": {
+          "package_name": "uz.jama.bottomnav"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846086203891-99hj3aelflnqt4bokpo4l8aa4stbl75n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn2n1SaYD1m0yARpvV-Dq83d3cLPYZ2Aw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846086203891-99hj3aelflnqt4bokpo4l8aa4stbl75n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

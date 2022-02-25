@@ -69,9 +69,9 @@ public class CommentActivity extends AppCompatActivity {
         post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (TextUtils.isEmpty(addComment.getText().toString())){
+                if (TextUtils.isEmpty(addComment.getText().toString())) {
                     Toast.makeText(CommentActivity.this, "No added comment...", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     putComment();
                 }
             }
@@ -89,9 +89,9 @@ public class CommentActivity extends AppCompatActivity {
                 .push().setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Toast.makeText(CommentActivity.this, "Comment added!", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     Toast.makeText(CommentActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
@@ -105,7 +105,11 @@ public class CommentActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
 
+                if (user.getImageurl().equals("default")) {
                     imageProfile.setImageResource(R.mipmap.ic_launcher);
+                }else {
+                    Picasso.get().load(user.getImageurl()).into(imageProfile);
+                }
 
             }
 

@@ -6,7 +6,7 @@ public class User {
     private String email;
     private String username;
     private String bio;
-    private String imageurl;
+    private String imageUrl;
     private String id;
 
     public User() {
@@ -17,7 +17,7 @@ public class User {
         this.email = email;
         this.username = username;
         this.bio = bio;
-        this.imageurl = imageurl;
+        this.imageUrl = imageurl;
         this.id = id;
     }
 
@@ -54,11 +54,11 @@ public class User {
     }
 
     public String getImageurl() {
-        return imageurl;
+        return imageUrl;
     }
 
     public void setImageurl(String imageurl) {
-        this.imageurl = imageurl;
+        this.imageUrl = imageurl;
     }
 
     public String getId() {

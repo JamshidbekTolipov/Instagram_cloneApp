@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/more_hm"
+        android:id="@+id/more_pi"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_margin="15dp"
@@ -26,13 +26,13 @@
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image_hm"
+                android:id="@+id/profile_image_pi"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="5dp" />
 
             <TextView
-                android:id="@+id/username_hm"
+                android:id="@+id/username_pi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/post_image_hm"
+                android:id="@+id/post_image_pi"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="1:1"
@@ -62,7 +62,7 @@
             android:padding="10dp">
 
             <ImageView
-                android:id="@+id/like_hm"
+                android:id="@+id/like_pi"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_like"
@@ -71,28 +71,28 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/comment_hm"
+                android:id="@+id/comment_pi"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
                 android:src="@drawable/ic_comment"
-                app:layout_constraintBottom_toBottomOf="@id/like_hm"
-                app:layout_constraintStart_toEndOf="@id/like_hm"
-                app:layout_constraintTop_toTopOf="@id/like_hm" />
+                app:layout_constraintBottom_toBottomOf="@id/like_pi"
+                app:layout_constraintStart_toEndOf="@id/like_pi"
+                app:layout_constraintTop_toTopOf="@id/like_pi" />
 
             <ImageView
-                android:id="@+id/save_hm"
+                android:id="@+id/save_pi"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_save"
-                app:layout_constraintBottom_toBottomOf="@id/like_hm"
+                app:layout_constraintBottom_toBottomOf="@id/like_pi"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/like_hm" />
+                app:layout_constraintTop_toTopOf="@id/like_pi" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/no_of_likes_hm"
+            android:id="@+id/no_of_likes_pi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -100,7 +100,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/author_hm"
+            android:id="@+id/author_pi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -108,7 +108,7 @@
             android:textStyle="bold" />
 
         <com.hendraanggrian.appcompat.widget.SocialTextView
-            android:id="@+id/description_hm"
+            android:id="@+id/description_pi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
@@ -116,7 +116,7 @@
             android:textColor="@color/colorAccent" />
 
         <TextView
-            android:id="@+id/no_of_comments_hm"
+            android:id="@+id/no_of_comments_pi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"

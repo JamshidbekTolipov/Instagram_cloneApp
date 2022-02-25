@@ -34,12 +34,11 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerViewPosts = view.findViewById(R.id.recycler_view_posts_hm);
         recyclerViewPosts.setHasFixedSize(true);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
@@ -49,25 +48,26 @@ public class HomeFragment extends Fragment {
         recyclerViewPosts.setAdapter(postAdapter);
 
         followingList = new ArrayList<>();
-
-        checkFollowingUser();
+        checkFollowingUsers();
 
         return view;
+
     }
 
-    private void checkFollowingUser() {
+    private void checkFollowingUsers() {
 
         FirebaseDatabase.getInstance().getReference().child("Follow").child(FirebaseAuth.getInstance()
                 .getCurrentUser().getUid()).child("following").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                followingList.clear();
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                followingList.clear();
+                for (DataSnapshot snapshot :
+                        dataSnapshot.getChildren()) {
                     followingList.add(snapshot.getKey());
                 }
 
-                readPost();
+                readPosts();
 
             }
 
@@ -79,25 +79,21 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private void readPost() {
+    private void readPosts() {
+
         FirebaseDatabase.getInstance().getReference().child("Posts").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                postList.clear();
-
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Post post = snapshot.getValue(Post.class);
 
-                    for (String id : followingList) {
-                        if (post.getPublisher().equals(id)) {
+                    for (String id : followingList){
+                        if (post.getPublisher().equals(id)){
                             postList.add(post);
                         }
                     }
-
+                    postAdapter.notifyDataSetChanged();
                 }
-
-                postAdapter.notifyDataSetChanged();
-
             }
 
             @Override
@@ -105,5 +101,6 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
     }
 }

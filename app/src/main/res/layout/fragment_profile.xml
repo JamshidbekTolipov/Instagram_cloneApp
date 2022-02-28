@@ -83,8 +83,9 @@
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <TextView
@@ -104,9 +105,10 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="35dp"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <TextView
@@ -126,9 +128,10 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="35dp"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <TextView
@@ -187,40 +190,40 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/bottom_pe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="-5dp"
-                android:id="@+id/bottom_pe"
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/my_pictures_pe"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:id="@+id/my_pictures_pe"
-                    android:src="@drawable/ic_my_pictures"/>
+                    android:src="@drawable/ic_my_pictures" />
 
                 <ImageView
+                    android:id="@+id/saved_pictures_pe"
                     android:layout_width="0dp"
                     android:layout_height="24dp"
                     android:layout_weight="1"
-                    android:id="@+id/saved_pictures_pe"
-                    android:src="@drawable/ic_save"/>
+                    android:src="@drawable/ic_save" />
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_pictures_pe"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/recycler_view_pictures_pe"/>
+                android:layout_height="wrap_content" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_saved_pe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:id="@+id/recycler_view_saved_pe"/>
+                android:visibility="gone" />
 
         </LinearLayout>
 

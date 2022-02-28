@@ -195,16 +195,16 @@
                 android:id="@+id/bottom_pe"
                 android:orientation="horizontal">
 
-                <ImageView
+                <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/my_pictures_pe"
                     android:src="@drawable/ic_my_pictures"/>
 
-                <ImageView
+                <ImageButton
                     android:layout_width="0dp"
-                    android:layout_height="24dp"
+                    android:layout_height="43dp"
                     android:layout_weight="1"
                     android:id="@+id/saved_pictures_pe"
                     android:src="@drawable/ic_save"/>

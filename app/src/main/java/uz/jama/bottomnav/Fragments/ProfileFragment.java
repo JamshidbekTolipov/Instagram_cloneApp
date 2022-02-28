@@ -14,11 +14,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import uz.jama.bottomnav.Model.Post;
 import uz.jama.bottomnav.Model.User;
 import uz.jama.bottomnav.R;
 
@@ -62,8 +64,65 @@ public class ProfileFragment extends Fragment {
         savedPictures = view.findViewById(R.id.saved_pictures_pe);
 
         userInfo();
+        getFollowersAndFollowingCount();
+        getPostCount();
 
         return view;
+    }
+
+    private void getPostCount() {
+
+        FirebaseDatabase.getInstance().getReference().child("Posts").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int counter = 0;
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    Post post = dataSnapshot.getValue(Post.class);
+
+                    if (post.getPublisher().equals(profileId)){
+                        counter++;
+                    }
+
+                    posts.setText(String.valueOf(counter));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void getFollowersAndFollowingCount() {
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("follow").child(profileId);
+
+        ref.child("followers").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                followers.setText("" + snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        ref.child("following").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                following.setText("" + snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     private void userInfo() {
